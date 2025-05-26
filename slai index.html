@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+    href="slai style.css">
+    <title>SMART LEARNING AI</title>
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0e8e8;
+        }
+        header {
+            background: #76b3da;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .sidebar {
+      width: 220px;
+      background-color: #062e3f;
+      color: white;
+      padding: 20px;
+    }
+    .sidebar h2 {
+      margin-bottom: 20px;
+    }
+    .sidebar a {
+      display: block;
+      margin: 10px 0;
+      color: white;
+      text-decoration: none;
+    }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        .course {
+            background: #ffffff;
+            border: 1px solid #1f1919;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 15px;
+        }
+        #registrationForm {
+            display:block;
+            background: #ffffff;
+            border: 1px solid #170f0f;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        #registrationForm input {
+            display:none;
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+        }
+        #registrationForm button {
+            background: #c44254;
+            color: #281d9e;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #registrationForm button:hover {
+            background: #51c4ca;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="c:\Users\91730\OneDrive\Pictures\New folder\IMG-20250410-WA0009[1].png" alt="My Logo">  
+    </div>
+    <header>
+        <h1>SMART LEARNING AI</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Course</a></li>
+                <li><a href="#courses">Available Courses</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#registration" id="registerBtn">Registration/login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="sidebar">
+        <h2>Free Course</h2>
+        <a href="#">Register</a>
+        <a href="#">Notes</a>
+        <a href="#">Quizzes</a>
+        <a href="#">Video Lectures</a>
+      </div>
+
+    <main>
+        <section id="registration">
+            <h2>Registration Form</h2>
+            <div class="form-container">
+                <h2>Register</h2>
+                <form action="#" method="post">
+                  <label for="fullname">Full Name</label>
+                  <input type="text" id="fullname" name="fullname" required>
+            
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required>
+            
+                  <label for="username">Username</label>
+                  <input type="text" id="username" name="username" required>
+            
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="password" required>
+            
+                  <label for="confirm-password">Confirm Password</label>
+                  <input type="password" id="confirm-password" name="confirm-password" required>
+            
+                  <button type="submit">Register</button>
+                </form>
+            </div>
+            <section class="home">
+                <div class="home-content">
+                  <h2>Unlock Your Future with "Smart Learning AI"</h2>
+                  <p>Learn new skills, boost your career, or explore your passions — anytime, anywhere, at no cost.</p>
+                  <p>Welcome to <strong>LearnOnline</strong>, your destination for 100% free, high-quality online courses. Whether you're starting from scratch or looking to upgrade your skills, our platform offers courses in programming, design, marketing, personal development, and more — taught by experienced instructors, with lifetime access.</p>
+                  <div class="home-buttons">
+                    <a href="#courses" class="btn">Browse Courses</a>
+                    <a href="#registration" class="btn btn-secondary">Sign Up Now</a>
+                  </div>
+                </div>
+              </section>
+        </section>
+        <h2>Search Available Courses</h2>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" class="search-box" placeholder="Type to search courses..." onkeyup="filterCourses()">
+  </div>
+
+  <ul class="course-list" id="courseList">
+    <li>Web Development</li>
+    <li>Data Science</li>
+    <li>Machine Learning</li>
+    <li></li>
+    <li>Cybersecurity</li>
+    <li> Marketing</li>
+    <li>Python </li>
+    <li></li>
+  </ul>
+
+  <script>
+    function filterCourses() {
+      let input = document.getElementById('searchInput').value.toLowerCase();
+      let items = document.querySelectorAll('#courseList li');
+
+      items.forEach(item => {
+        let text = item.textContent.toLowerCase();
+        item.style.display = text.includes(input) ? '' : 'none';
+      });
+    }
+  </script>
+        <section id="courses">
+            <h2>Available Courses</h2>
+            <div class="course">
+                
+                <script>
+                    const API_KEY =' aA9uFLUbd2FtXDsXWGbkaxki7t6hQy1EXHtLU5TApyrPOuY6';
+                    const API_URL = 'https://dev.coursera.com/my-apps/0d19f8e5-32e6-4ac5-be1a-de8a61fbe217';
+                
+                    fetch(API_URL, {
+                      headers: {
+                        'Authorization': Coursera {aA9uFLUbd2FtXDsXWGbkaxki7t6hQy1EXHtLU5TApyrPOuY6}
+                      }
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                      const container = document.getElementById('courses');
+                      data.forEach(course => {
+                        const div = document.createElement('div');
+                        div.className = 'course';
+                        div.innerHTML = `
+                          <h3>${html}</h3>
+                          <p>${course.description}</p>
+                          <a href="${https://www.coursera.org/learn/introduction-html-css-javascript}">Start Course</a>
+                        `;
+                        container.appendChild(div);
+                      });
+                    })
+                    .catch(err => {
+                      console.error(err);
+                      document.getElementById('courses').innerHTML = '<p>Error loading courses.</p>'; by
+                    });
+                  </script>
+                <h3>HTML</h3>
+                <p>Understand the core concept of HTML</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#HTML COURSES.html">Start Course</a>
+            </div>
+            <div class="course">
+                <h3>CSS</h3>
+                <p>Understand the core concept of CSS</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+            <div class="course">
+                <h3>JavaScript</h3>
+                <p>Understand the core concept of JavaScript</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>PYTHON</h3>
+                <p>Understand the core concept of PYTHON</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+
+<div class="course">
+                <h3>PHP</h3>
+                <p>Understand the core concept of PHP</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+
+<div class="course">
+                <h3>SQL</h3>
+                <p>Understand the core concept of SQL</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+
+<div class="course">
+                <h3>JAVA</h3>
+                <p>Understand the core concept of JAVA</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+
+<div class="course">
+                <h3>C</h3>
+                <p>Understand the core concept of C.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>C++</h3>
+                <p>Understand the core concept of C++.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>C#</h3>
+                <p>Understand the core concept of C#.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>Bootstrap</h3>
+                <p>Understand the core concept of Bootstrap.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>REACT</h3>
+                <p>Understand the core concept of REACT.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>MYSQL</h3>
+                <p>Understand the core concept of MYSQL.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>Jquery</h3>
+                <p>Understand the core concept of Jquery.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>EXCEL</h3>
+                <p>Understand the core concept of EXCEL.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>XML</h3>
+                <p>Understand the core concept of XML.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>DJANGO</h3>
+                <p>Understand the core concept of DJANGO.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>NUMPY</h3>
+                <p>Understand the core concept of NUMPY.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>PANDAS</h3>
+                <p>Understand the core concept of PANDAS.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>DSA</h3>
+                <p>Understand the core concept of DSA.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>Marketing</h3>
+                <p>Understand the core concept of Marketing.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>Communication</h3>
+                <p>Understand the core concept of Communication.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>business analyst</h3>
+                <p>Understand the core concept of business analyst.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>typescripts</h3>
+                <p>Understand the core concept of typescripts.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>angular</h3>
+                <p>Understand the core concept of angular.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>git</h3>
+                <p>Understand the core concept of git.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>github</h3>
+                <p>Understand the core concept of github.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>MongoDB</h3>
+                <p>Understand the core concept of MongoDB.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>AI</h3>
+                <p>Understand the core concept of AI.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>Machine Learning</h3>
+                <p>Understand the core concept of Machine Learning.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>Deep Learning</h3>
+                <p>Understand the core concept of Deep Learning.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>R</h3>
+                <p>Understand the core concept of R.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>GO</h3>
+                <p>Understand the core concept of GO.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>KOTLIN</h3>
+                <p>Understand the core concept of KOTLIN.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>SCIPY</h3>
+                <p>Understand the core concept of SCIPY.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>DATA SCIENCE</h3>
+                <p>Understand the core concept of DATA SCIENCE.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>CYBERSECURITY</h3>
+                <p>Understand the core concept of CYBERSECURITY.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+<div class="course">
+                <h3>DATA Analyst</h3>
+                <p>Understand the core concept of DATA Analyst.</p>
+                <ul>
+                    <li>Video Lecture</li>
+                    <li>PDF Notes</li>
+                    <li>Quizzes/Assignments</li>
+                    <li>Progress Tracker</li>
+                </ul>
+                <a href="#">Start Course</a>
+            </div>
+    </main>
+    <footer>
+
+        <p>&copy; 2025 Online Courses. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('registerBtn').addEventListener('click', function() {
+            const form = document.getElementById('registrationForm');
+            form.style.display = form.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+    <script src="script.js"></script>
+
+</body>
+</html>
